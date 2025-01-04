@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<title>Игра 1</title>
+		<style>
+			body{
+				background: #444444;
+				color: #ffff99;
+				font-family: "comic sans ms";
+			}
+		</style>
+		<center>
+			<h1><b>Найди все домики🔎</b></h1>
+			<sup>Нажимай, чтобы их найти</sup>
+			<br>
+			<button type='button' onclick="Play(this)">Играть</button>
+			<p id="playgame"></p>
+			<canvas id="myCanvas" width="500" height="500"></canvas>
+		</center>
+		<script>
+			function Play(element){
+				element.remove();
+				var playing = "True";
+				document.getElementById("playgame").innerHTML = "<p id='TimeAndPoints'><b>Домики: хх/хх, время: хх:хх</b></p>";
+				const canvas = document.getElementById("myCanvas");
+				const ctx = canvas.getContext("2d");
+				ctx.fillStyle = "white";
+				ctx.fillRect(0,0,500,500);
+				ctx.fillStyle = "black";
+				ctx.fillRect(5,5,490,490);
+				//рисуем домик
+				var x = 100
+				var y = 100
+				var size = 30
+				ctx.fillStyle = "white";
+				ctx.fillRect(x,y,size,size);
+				ctx.fillStyle = "black";
+				ctx.fillRect(x+size/2-size/5,y+size/2-size/5,size/5,size/5);
+				var x = x+size/20+size/5;
+				ctx.fillRect(x+size/2-size/5,y+size/2-size/5,size/5,size/5);
+				var y = y+size/20+size/5;
+				ctx.fillRect(x+size/2-size/5,y+size/2-size/5,size/5,size/5);
+				var x = x-size/20-size/5;
+				ctx.fillRect(x+size/2-size/5,y+size/2-size/5,size/5,size/5);
+				ctx.fillStyle = "white";
+				var y = y-size/20-size/5;
+				for (let i=0;i<size/3.3333333333333;i++){
+					ctx.fillRect(x+i-size/10,y-i,size-i*2+size/5,1);
+				}
+				//
+				let time = 10; //1 минута
+				const timer = setInterval(() => {
+				document.getElementById('countdown').textContent = time <= 0 ? clearInterval(timer) // Останавливаем таймер, поскольку время истекло : time--; // С каждой секундой уменьшаем время
+				}, 1000 );
+				//const timer = setInterval(() => {document.getElementById("TimeAndPoints").textContent = time <= 0 ? clearInterval(timer)}, 1000);
+			}
+		</script>
+	</body>
+</html>
