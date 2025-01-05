@@ -1,14 +1,19 @@
 <script src='https://telegram.org/js/telegram-web-app.js'></script>
 <body>
-  Тест телеграм <b>web-app</b>
+  <p id='t'>Тест телеграм <b>web-app</b></p>
   <script>
     var tg = window.Telegram.WebApp
     var MainBtn = tg.MainButton
+    var user = tg.initDataUnsafe.user
     MainBtn.show() //Показать кнопку
     MainBtn.enable() //Сделать активной
     //Изменяем кнопку
     MainBtn.text = 'Кнопочка'
     MainBtn.color = '#000000'
     MainBtn.textColor = '#ffffff'
+    //Пишем данные пользователя
+    document.getElementById("t").innerHTML = user.id
+    document.getElementById("t").innerHTML = user.first_name+' '+user.last_name
+    document.getElementById("t").innerHTML = user.username
   </script>
 </body>
