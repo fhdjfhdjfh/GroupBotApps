@@ -19,8 +19,9 @@
     MainBtn.color = '#000000'
     MainBtn.textColor = '#ffffff'
     //Пишем данные пользователя
-    document.getElementById("usercard").innerTEXT = user.id
-    document.getElementById("usercard").innerTEXT = user.first_name+' '+user.last_name
-    document.getElementById("usercard").innerTEXT = user.username
+    let usercard = document.getElementById("usercard")
+    usercard.innerTEXT = user.id
+    usercard.innerTEXT = user.first_name+' '+user.last_name
+    usercard.innerTEXT = user.username
   </script>
 </body>
