@@ -6,9 +6,7 @@
   <p id='b'></p>
   <p id='c'></p><br>
   Вместе с Вами в этом web-приложении:
-  <py-script>
-    print('s')
-  </py-script>
+  <p id='d'></p>
   <script>
     var tg = window.Telegram.WebApp
     var MainBtn = tg.MainButton
@@ -23,5 +21,11 @@
     document.getElementById("a").innerHTML = user.id
     document.getElementById("b").innerHTML = user.first_name+' '+user.last_name
     document.getElementById("c").innerHTML = user.username
+    //Пишем пользователей
+    var reader = new XMLHttpRequest() 
+    reader.open('get', 'Server.txt', true)
+    reader.onreadystatechange = displayContents
+    reader.send(null)
+    document.getElementById("d").innerHTML = reader.responseText
   </script>
 </body>
