@@ -1,13 +1,10 @@
 <script src='https://telegram.org/js/telegram-web-app.js'></script>
 <body>
-  <div id='usercard'>
-    Тест телеграм <b>web-app</b>
-  </div>
-  
-  <div id='users'>
-    Вместе с Вами в этом web-приложении:
-  </div>
-  
+  Тест телеграм <b>web-app</b>
+  <p id='a'></p>
+  <p id='b'></p>
+  <p id='c'></p><br>
+  Вместе с Вами в этом web-приложении:
   <script>
     var tg = window.Telegram.WebApp
     var MainBtn = tg.MainButton
@@ -19,9 +16,8 @@
     MainBtn.color = '#000000'
     MainBtn.textColor = '#ffffff'
     //Пишем данные пользователя
-    let usercard = document.getElementById("usercard")
-    usercard.innerTEXT = user.id
-    usercard.innerTEXT = user.first_name+' '+user.last_name
-    usercard.innerTEXT = user.username
+    document.getElementById("a").innerHTML = user.id
+    document.getElementById("b").innerHTML = user.first_name+' '+user.last_name
+    document.getElementById("c").innerHTML = user.username
   </script>
 </body>
