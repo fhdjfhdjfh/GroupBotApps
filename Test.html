@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <script src='https://telegram.org/js/telegram-web-app.js'></script>
 <body>
-  Тест телеграм <b>web-app</b>
-  <p id='a'></p>
-  <p id='b'></p>
-  <p id='c'></p><br>
-  Вместе с Вами в этом web-приложении:
-  <p id='d'></p>
+  <center>
+    Ваша <b>карточка</b>:
+    <p id='a'></p>
+    <p id='b'></p>
+    <p id='c'></p><br>
+  </center>
   <script>
     var tg = window.Telegram.WebApp
     var MainBtn = tg.MainButton
@@ -21,11 +21,5 @@
     document.getElementById("a").innerHTML = user.id
     document.getElementById("b").innerHTML = user.first_name+' '+user.last_name
     document.getElementById("c").innerHTML = user.username
-    //Пишем пользователей
-    var reader = new XMLHttpRequest() 
-    reader.open('get', 'Server.txt', true)
-    reader.onreadystatechange = displayContents
-    reader.send(null)
-    document.getElementById("d").innerHTML = reader.responseText
   </script>
 </body>
