@@ -41,9 +41,20 @@
     <canvas id="myCanvas" width="300" height="300"></canvas>
   </center>
   <script>
+    var colors = tg.ThemeParams
     const canvas = document.getElementById("myCanvas")
     const ctx = canvas.getContext("2d")
-    ctx.fillStyle = 'aa'
-    ctx.fillRect(x,y,size,size)
+    ctx.fillStyle = colors.bg_color
+    ctx.fillRect(0,0,10,10)
+    ctx.fillStyle = colors.text_color
+    ctx.fillRect(15,0,10,10)
+    ctx.fillStyle = colors.hint_color
+    ctx.fillRect(30,0,10,10)
+    ctx.fillStyle = colors.link_color
+    ctx.fillRect(45,0,10,10)
+    ctx.fillStyle = colors.button_color
+    ctx.fillRect(60,0,10,10)
+    ctx.fillStyle = colors.button_text_colorString
+    ctx.fillRect(75,0,10,10)
   </script>
 </body>
