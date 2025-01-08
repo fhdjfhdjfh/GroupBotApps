@@ -30,6 +30,13 @@
     document.getElementById("c").innerHTML = user.username
   </script>
   <center>
+    Ваши <b>цвета</b>:<br>
+    <p id='d'></p>
+    <p id='e'></p>
+    <p id='f'></p>
+    <p id='g'></p>
+    <p id='h'></p>
+    <p id='i'></p>
     Также можете поситить:<br>
     <b>
       <a href='https://t.me/Q1vjHtT69JaJ4Bot'>InlineBot</a><br>
@@ -42,19 +49,11 @@
   </center>
   <script>
     var colors = tg.ThemeParams
-    const canvas = document.getElementById("myCanvas")
-    const ctx = canvas.getContext("2d")
-    ctx.fillStyle = colors.bg_color
-    ctx.fillRect(0,0,10,10)
-    ctx.fillStyle = colors.text_color
-    ctx.fillRect(15,0,10,10)
-    ctx.fillStyle = colors.hint_color
-    ctx.fillRect(30,0,10,10)
-    ctx.fillStyle = colors.link_color
-    ctx.fillRect(45,0,10,10)
-    ctx.fillStyle = colors.button_color
-    ctx.fillRect(60,0,10,10)
-    ctx.fillStyle = colors.button_text_colorString
-    ctx.fillRect(75,0,10,10)
+    document.getElementById("d").innerHTML = colors.bg_color
+    document.getElementById("e").innerHTML = colors.text_color
+    document.getElementById("f").innerHTML = colors.hint_color
+    document.getElementById("g").innerHTML = colors.link_color
+    document.getElementById("h").innerHTML = colors.button_color
+    document.getElementById("i").innerHTML = colors.button_text_colorString
   </script>
 </body>
